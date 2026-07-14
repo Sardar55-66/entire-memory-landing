@@ -18,7 +18,7 @@ export default function Biography() {
         className="max-w-[680px] mx-auto flex flex-col items-center"
       >
         <motion.div variants={variants.slideUp} className="w-full text-center">
-          <SectionTitle>A Life Well Lived</SectionTitle>
+          <SectionTitle>Жизнь, прожитая достойно</SectionTitle>
           <GoldDivider />
         </motion.div>
 

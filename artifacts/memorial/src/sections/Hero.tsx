@@ -32,7 +32,7 @@ export default function Hero() {
         >
           <img 
             src="https://picsum.photos/seed/portrait-alex/400/400" 
-            alt="Alexander Morgan" 
+            alt="Александр Морган" 
             className="w-full h-full object-cover filter grayscale"
           />
         </motion.div>

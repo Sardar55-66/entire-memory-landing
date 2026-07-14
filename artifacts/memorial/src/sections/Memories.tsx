@@ -17,7 +17,7 @@ export default function Memories() {
         variants={variants.slideUp}
         className="max-w-7xl mx-auto flex flex-col items-center mb-16"
       >
-        <SectionTitle>Moments They Shared</SectionTitle>
+        <SectionTitle>Общие моменты</SectionTitle>
         <GoldDivider />
       </motion.div>
 

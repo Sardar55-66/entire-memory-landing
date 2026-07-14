@@ -50,7 +50,7 @@ export default function Timeline() {
         variants={variants.slideUp}
         className="max-w-4xl mx-auto flex flex-col items-center mb-16"
       >
-        <SectionTitle>A Journey in Time</SectionTitle>
+        <SectionTitle>Путь во времени</SectionTitle>
         <GoldDivider />
       </motion.div>
 

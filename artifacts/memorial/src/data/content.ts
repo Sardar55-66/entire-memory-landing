@@ -1,94 +1,101 @@
 export const HERO = {
-  name: "Alexander Morgan",
+  name: "Александр Морган",
   dates: "1965 — 2025",
-  quote: "Some lives end. Love never does."
+  quote: "Жизни обрываются. Любовь — никогда."
 };
 
 export const BIOGRAPHY = [
-  "Alexander Morgan was born on a grey November morning in Edinburgh, Scotland, but he carried a quiet warmth with him wherever he went. The son of a strict schoolteacher and a spirited pianist, he inherited both a deep respect for learning and an intuitive understanding of the unsayable.",
-  "At twenty-two, he crossed the Atlantic with two suitcases and a worn copy of Thomas Hardy, settling in Boston to study literature. It was there, amidst the brick and ivy, that he discovered his life's calling: not to write the great novels, but to teach others how to read them. For twenty-eight years, he stood at the front of Room 204 at Brookfield Academy, turning restless teenagers into thoughtful readers.",
-  "In Eleanor, he found a quiet love that anchored his sprawling thoughts. Together they built a home that always smelled faintly of old paper, strong tea, and woodsmoke. As a father to James and Sophia, he was fiercely present—a man who might forget his own birthday but never missed a recital, a game, or a moment when he was needed.",
-  "His belief that every child deserved to unlock the world through reading led him to found Open Pages in 2008. What started with boxes of books in his garage became a charity that has placed over 200,000 books in the hands of underserved children. He never sought recognition for it; the only reward he cared about was a child's eyes widening at a new story.",
-  "Alexander lived a life measured not by accolades, but by the quiet, enduring impact he had on the people lucky enough to know him. He leaves behind a legacy of kindness, a shelf of dog-eared books, and a world made immeasurably better by his presence."
+  "Александр Морган родился серым ноябрьским утром в Эдинбурге, Шотландия, но куда бы он ни шёл — повсюду нёс с собой тихую теплоту. Сын строгого школьного учителя и энергичной пианистки, он унаследовал и глубокое уважение к знаниям, и тонкое понимание того, что нельзя выразить словами.",
+  "В двадцать два он пересек Атлантику с двумя чемоданами и потёртым томиком Томаса Харди и поселился в Бостоне, чтобы изучать литературу. Именно там, среди кирпича и плюща, он нашёл своё призвание: не писать великие романы, а учить других их читать. Двадцать восемь лет он стоял у доски в аудитории 204 Академии Брукфилд, превращая беспокойных подростков в вдумчивых читателей.",
+  "В Элеоноре он нашёл тихую любовь, которая удерживала на якоре его широкие размышления. Вместе они создали дом, который всегда едва уловимо пах старой бумагой, крепким чаем и дымом. Отцом Джеймса и Софии он был по-настоящему — человеком, который мог забыть собственный день рождения, но никогда не пропускал концерт, матч или момент, когда он был нужен.",
+  "Вера в то, что каждый ребёнок достоин открыть мир через чтение, привела его в 2008 году к созданию «Открытых страниц». Начавшись с коробок книг в его гараже, эта благотворительность передала более 200 000 книг в руки детей, которым они были особенно нужны. Он никогда не искал признания: единственной наградой для него были глаза ребёнка, загоревшиеся от новой истории.",
+  "Александр прожил жизнь, измеряемую не наградами, а тихим, непреходящим влиянием на тех, кому посчастливилось его знать. Он оставил после себя наследие доброты, полку зачитанных книг и мир, который стал неизмеримо лучше от его присутствия."
 ];
 
 export const TIMELINE = [
   {
     year: "1965",
-    title: "A New Beginning",
-    description: "Born on a grey November morning in Edinburgh, Scotland, to a schoolteacher father and a pianist mother."
+    title: "Новое начало",
+    description: "Родился серым ноябрьским утром в Эдинбурге, Шотландия, в семье школьного учителя и пианистки."
   },
   {
     year: "1987",
-    title: "Graduating with Honours",
-    description: "Completed his degree in English Literature at the University of Edinburgh, graduating with first-class honours and a lifelong love of Thomas Hardy."
+    title: "Выпуск с отличием",
+    description: "Окончил факультет английской литературы Эдинбургского университета с отличием первой степени и навсегда полюбил Томаса Харди."
   },
   {
     year: "1990",
-    title: "Finding His Person",
-    description: "Married Eleanor Grace Matthews in a small ceremony in Vermont, surrounded by autumn leaves and close friends."
+    title: "Встреча с судьбой",
+    description: "Обвенчался с Элеонорой Грейс Мэтьюз на скромной церемонии в Вермонте, среди осенней листвы и самых близких друзей."
   },
   {
     year: "1993",
-    title: "Becoming a Father",
-    description: "James Alexander Morgan entered the world on a Tuesday in June. Alex held him for an hour and didn't say a word."
+    title: "Становление отцом",
+    description: "Джеймс Александр Морган появился на свет во вторник в июне. Алекс держал его на руках целый час и не сказал ни слова."
   },
   {
     year: "2008",
-    title: "Giving Back",
-    description: "Founded Open Pages, a literacy charity that would go on to place over 200,000 books in the hands of children who needed them most."
+    title: "Помощь другим",
+    description: "Основал «Открытые страницы» — благотворительную организацию по развитию грамотности, которая впоследствии передала детям более 200 000 книг."
   },
   {
     year: "2025",
-    title: "Remembered with Love",
-    description: "Passed peacefully on a Sunday morning in March. The classroom he taught in for 28 years now bears his name."
+    title: "Память в любви",
+    description: "Ушёл тихо воскресным утром в марте. Аудитория, в которой он преподавал 28 лет, теперь носит его имя."
   }
 ];
 
 export const MEMORIES = [
   {
-    author: "Eleanor Morgan",
-    role: "Wife",
-    quote: "He used to leave notes in my coat pockets. Little ones — a poem he'd remembered, a word he thought I'd like. I still find them sometimes."
+    author: "Элеонора Морган",
+    role: "Жена",
+    quote: "Он оставлял записки в карманах моего пальто. Маленькие — стихотворение, которое вспомнил, слово, которое, как ему казалось, мне понравится. Я до сих пор их иногда нахожу."
   },
   {
-    author: "James Morgan",
-    role: "Son",
-    quote: "Dad taught me that being a good man has nothing to do with being impressive. It's about showing up."
+    author: "Джеймс Морган",
+    role: "Сын",
+    quote: "Папа научил меня, что быть хорошим человеком — это вовсе не про то, чтобы произвести впечатление. Это про то, чтобы быть рядом."
   },
   {
-    author: "Margaret Holloway",
-    role: "Colleague, 24 years",
-    quote: "In 24 years, I never once saw him dismiss a student's question. Every single one mattered to him."
+    author: "Маргарет Холлоуэй",
+    role: "Коллега, 24 года",
+    quote: "За 24 года я ни разу не видела, чтобы он отмахнулся от вопроса ученика. Каждый вопрос был для него важен."
   },
   {
-    author: "Sophie Clarke",
-    role: "Former student, 2009",
-    quote: "He handed back my essay with one line of red ink: 'You're going to be a writer.' I'm a journalist now. I think of him every deadline."
+    author: "Софи Кларк",
+    role: "Бывшая ученица, 2009",
+    quote: "Он вернул моё сочинение с одной красной строчкой: «Ты станешь писателем». Теперь я журналист. Вспоминаю его перед каждым дедлайном."
   },
   {
-    author: "David Chen",
-    role: "Friend",
-    quote: "He cried at every graduation ceremony. Every year, without fail. He never apologized for it."
+    author: "Дэвид Чен",
+    role: "Друг",
+    quote: "Он плакал на каждой выпускной церемонии. Каждый год без исключения. И никогда за это не извинялся."
   },
   {
-    author: "Reverend Anne Foster",
-    role: "Pastor",
-    quote: "Alex lived his faith through action, not doctrine. His charity work was his sermon."
+    author: "Преподобный Энн Фостер",
+    role: "Пастор",
+    quote: "Алекс жил верой через дела, а не через догматы. Его благотворительность была его проповедью."
   },
   {
-    author: "Sophia Morgan",
-    role: "Daughter",
-    quote: "He was the loudest person in the room at my concerts. Not loud in the flashy way — loud in the way that filled the whole hall with warmth."
+    author: "София Морган",
+    role: "Дочь",
+    quote: "На моих концертах он был самым громким человеком в зале. Не громким в показном смысле — громким так, что весь зал наполнялся теплом."
   },
   {
-    author: "Thomas Reid",
-    role: "Open Pages co-founder",
-    quote: "He used to say: 'A book is a door. Our job is to make sure every child can reach the handle.'"
+    author: "Томас Рид",
+    role: "Сооснователь «Открытых страниц»",
+    quote: "Он говорил: «Книга — это дверь. Наша задача — сделать так, чтобы каждый ребёнок мог дотянуться до ручки»."
   }
 ];
 
 export const LARGE_QUOTE = {
-  quote: "He entered every room as though he'd been looking forward to seeing you all day. For twenty-eight years, his students learned more than literature. They learned how to be seen.",
-  author: "Eleanor Morgan"
+  quote: "Он входил в каждую комнату так, будто весь день ждал встречи именно с вами. Двадцать восемь лет его ученики узнавали не только литературу. Они учились быть замеченными.",
+  author: "Элеонора Морган"
+};
+
+export const FOOTER = {
+  title: "Светлая память",
+  name: "Александр Морган · 1965 — 2025",
+  quote: "«Те, кого мы любим, не уходят — они идут рядом с нами каждый день.»",
+  watermark: "Eternal Tribute"
 };

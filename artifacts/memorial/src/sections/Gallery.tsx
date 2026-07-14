@@ -28,7 +28,7 @@ export default function Gallery() {
         variants={variants.slideUp}
         className="max-w-7xl mx-auto flex flex-col items-center mb-12"
       >
-        <SectionTitle>Captured Moments</SectionTitle>
+        <SectionTitle>Запечатлённые мгновения</SectionTitle>
         <GoldDivider />
       </motion.div>
 
@@ -48,7 +48,7 @@ export default function Gallery() {
             >
               <img 
                 src={src} 
-                alt={`Memory ${index + 1}`} 
+                alt={`Воспоминание ${index + 1}`} 
                 loading="lazy"
                 className="w-full h-auto filter grayscale group-hover:scale-[1.04] transition-transform duration-700 ease-out"
               />
