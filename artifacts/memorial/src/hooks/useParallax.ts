@@ -6,12 +6,12 @@ export function useParallax(speedMultiplier: number = 0.4): MotionValue<string> 
   const [windowHeight, setWindowHeight] = useState(0);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setWindowHeight(window.innerHeight);
-      const handleResize = () => setWindowHeight(window.innerHeight);
-      window.addEventListener('resize', handleResize);
-      return () => window.removeEventListener('resize', handleResize);
-    }
+    if (typeof window === 'undefined') return;
+
+    setWindowHeight(window.innerHeight);
+    const handleResize = () => setWindowHeight(window.innerHeight);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return useTransform(
