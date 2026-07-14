@@ -15,10 +15,13 @@ Memorial landing page for remembering a loved one — static Vite/React site wit
 
 ## Deploy (Vercel)
 
-- Config: root `vercel.json`
-- Builds only `@workspace/memorial` (not mockup-sandbox / api-server)
+- Preferred Root Directory: `artifacts/memorial` (uses `artifacts/memorial/vercel.json`)
+- Current/compatible Root Directory: `artifacts/api-server` (uses `artifacts/api-server/vercel.json` and builds memorial when `VERCEL=1`)
+- Also present: root `vercel.json` if Root Directory is the repo root
+- Builds only `@workspace/memorial` (not mockup-sandbox)
 - Output: `artifacts/memorial/dist/public`
 - SPA rewrite to `index.html`
+- If Dashboard has Build Command Override set to `pnpm run typecheck`, clear it or disable Override so `vercel.json` / `build` can run
 
 ## Stack
 
@@ -41,13 +44,13 @@ Memorial landing page for remembering a loved one — static Vite/React site wit
 
 ### Vercel deploys only the memorial package (2026-07-14)
 
-- **What changed:** Added `vercel.json` so the Vercel build runs typecheck + `@workspace/memorial` build only, and serves `artifacts/memorial/dist/public`. Vite configs for memorial and mockup-sandbox default `PORT` to `5173` and `BASE_PATH` to `/` when unset.
-- **Why:** Root `pnpm run build` recursively builds every package. On Vercel, `mockup-sandbox` failed because Replit-required `PORT`/`BASE_PATH` were missing. The product deployed to Vercel is the static memorial landing page, not the Replit mockup sandbox or API server.
-- **Alternatives considered:** (1) Set `PORT`/`BASE_PATH` as Vercel env vars and keep recursive build — would still waste CI time building unused packages and could fail on api-server assumptions. (2) Remove mockup-sandbox from the workspace — too invasive. (3) Make env vars optional only — still builds unnecessary packages.
-- **Why chosen:** Scoped build matches what users actually host; defaults keep Replit override-friendly and unblock CI.
-- **Benefits:** Reliable Vercel deploys; faster builds; clear separation of deployable app vs workspace tooling.
-- **Drawbacks:** Dashboard “Build Command” overrides must not conflict with `vercel.json`; full monorepo build locally still uses `pnpm run build`.
-- **Future work:** If the API is later hosted, add a separate Vercel/server project; consider `build:memorial` script alias for local parity.
+- **What changed:** Added `vercel.json` at repo root, `artifacts/memorial`, and `artifacts/api-server`. Vite configs default `PORT`/`BASE_PATH`. When `VERCEL=1`, `artifacts/api-server` `build` builds the memorial static site (project Root Directory is currently `artifacts/api-server`).
+- **Why:** Recursive monorepo build failed on Vercel; Root Directory was set to `artifacts/api-server`, so output path `artifacts/memorial/dist/public` was resolved incorrectly and the wrong package scripts ran.
+- **Alternatives considered:** (1) Env-only PORT/BASE_PATH — still built unused packages. (2) Require dashboard Root Directory change only — fragile without code fallback. (3) Remove api-server from workspace — too invasive.
+- **Why chosen:** Package-level `vercel.json` + Vercel-aware build script works with the current Root Directory and still supports memorial/root layouts.
+- **Benefits:** Deploy succeeds without dashboard surgery; memorial remains the hosted artifact.
+- **Drawbacks:** api-server `build` behaves differently on Vercel vs locally (`build:server` for Express bundle).
+- **Future work:** Set Vercel Root Directory to `artifacts/memorial` and remove the api-server deploy shim.
 
 ## Product
 

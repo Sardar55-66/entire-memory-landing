@@ -4,8 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "export NODE_ENV=development && pnpm run build && pnpm run start",
-    "build": "node ./build.mjs",
+    "dev": "export NODE_ENV=development && pnpm run build:server && pnpm run start",
+    "build:server": "node ./build.mjs",
+    "build": "node ./scripts/vercel-or-server-build.mjs",
+    "vercel-build": "node ./scripts/vercel-or-server-build.mjs",
     "start": "node --enable-source-maps ./dist/index.mjs",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
