@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@plugin "@tailwindcss/typography";
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --font-sans: var(--app-font-sans);
+  --font-serif: var(--app-font-serif);
+  
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --background: 39 30% 97%;
+  --foreground: 210 10% 20%;
+  --card: 30 20% 95%;
+  --card-foreground: 210 10% 20%;
+  --primary: 42 40% 55%;
+  --primary-foreground: 210 10% 15%;
+  --secondary: 210 8% 92%;
+  --secondary-foreground: 210 10% 30%;
+  --muted: 39 15% 92%;
+  --muted-foreground: 210 8% 50%;
+  --border: 39 15% 88%;
+  --input: 39 15% 88%;
+  --ring: 42 40% 55%;
+  
+  --app-font-sans: 'Inter', sans-serif;
+  --app-font-serif: 'Playfair Display', Georgia, serif;
+  --radius: 0.25rem;
+}
+
+@layer base {
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--app-font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  ::selection {
+    background-color: hsla(42, 40%, 55%, 0.3);
+    color: inherit;
+  }
+}
+
+@layer utilities {
+  .font-serif { font-family: 'Playfair Display', Georgia, serif; }
+  .text-gold { color: hsl(42, 40%, 55%); }
+  .bg-ivory { background-color: hsl(39, 30%, 97%); }
+  .text-charcoal { color: hsl(210, 10%, 20%); }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsla(42, 40%, 55%, 0.4);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsla(42, 40%, 55%, 0.8);
+}
