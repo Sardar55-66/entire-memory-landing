@@ -1,0 +1,12 @@
+{
+  "buildCommand": "pnpm run typecheck && pnpm --filter @workspace/memorial run build",
+  "outputDirectory": "artifacts/memorial/dist/public",
+  "installCommand": "pnpm install",
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

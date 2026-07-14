@@ -1,44 +1,68 @@
-# [Project name]
+# Eternal Tribute
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+Memorial landing page for remembering a loved one — static Vite/React site with biography, timeline, gallery, and memories.
 
 ## Run & Operate
 
+- `pnpm --filter @workspace/memorial run dev` — memorial frontend (needs `PORT`/`BASE_PATH` on Replit; defaults to `5173` and `/` otherwise)
+- `pnpm --filter @workspace/memorial run build` — production build for the memorial site
 - `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
 - `pnpm run typecheck` — full typecheck across all packages
-- `pnpm run build` — typecheck + build all packages
+- `pnpm run build` — typecheck + build all workspace packages
 - `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
 - `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- Required env: `DATABASE_URL` — Postgres connection string
+- Required env (API/db): `DATABASE_URL` — Postgres connection string
+
+## Deploy (Vercel)
+
+- Config: root `vercel.json`
+- Builds only `@workspace/memorial` (not mockup-sandbox / api-server)
+- Output: `artifacts/memorial/dist/public`
+- SPA rewrite to `index.html`
 
 ## Stack
 
 - pnpm workspaces, Node.js 24, TypeScript 5.9
+- Frontend: Vite + React (memorial)
 - API: Express 5
 - DB: PostgreSQL + Drizzle ORM
 - Validation: Zod (`zod/v4`), `drizzle-zod`
 - API codegen: Orval (from OpenAPI spec)
-- Build: esbuild (CJS bundle)
+- Build: esbuild (API), Vite (frontend)
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- Memorial UI: `artifacts/memorial`
+- API server: `artifacts/api-server`
+- Content copy: `artifacts/memorial/src/data/content.ts`
+- Vercel deploy: `vercel.json`
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+### Vercel deploys only the memorial package (2026-07-14)
+
+- **What changed:** Added `vercel.json` so the Vercel build runs typecheck + `@workspace/memorial` build only, and serves `artifacts/memorial/dist/public`. Vite configs for memorial and mockup-sandbox default `PORT` to `5173` and `BASE_PATH` to `/` when unset.
+- **Why:** Root `pnpm run build` recursively builds every package. On Vercel, `mockup-sandbox` failed because Replit-required `PORT`/`BASE_PATH` were missing. The product deployed to Vercel is the static memorial landing page, not the Replit mockup sandbox or API server.
+- **Alternatives considered:** (1) Set `PORT`/`BASE_PATH` as Vercel env vars and keep recursive build — would still waste CI time building unused packages and could fail on api-server assumptions. (2) Remove mockup-sandbox from the workspace — too invasive. (3) Make env vars optional only — still builds unnecessary packages.
+- **Why chosen:** Scoped build matches what users actually host; defaults keep Replit override-friendly and unblock CI.
+- **Benefits:** Reliable Vercel deploys; faster builds; clear separation of deployable app vs workspace tooling.
+- **Drawbacks:** Dashboard “Build Command” overrides must not conflict with `vercel.json`; full monorepo build locally still uses `pnpm run build`.
+- **Future work:** If the API is later hosted, add a separate Vercel/server project; consider `build:memorial` script alias for local parity.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+Public memorial page: hero, biography, timeline, photo gallery, quoted memories, footer with Eternal Tribute watermark.
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- Site copy in Russian.
+- Footer watermark branding: Eternal Tribute.
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- Vercel must use the memorial output directory from `vercel.json`, not the repo root.
+- If the Vercel project dashboard overrides Build Command to `pnpm run build`, change it to use `vercel.json` or set: `pnpm run typecheck && pnpm --filter @workspace/memorial run build`.
+- Replit still supplies `PORT` and `BASE_PATH`; other environments rely on defaults.
 
 ## Pointers
 
